@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import io from "socket.io-client";
 import ChatWindow from "./components/ChatWindow";
 import "./App.css";
+import { io } from "socket.io-client";
 
-const socket = io("http://localhost:4000");
+const socket = io(import.meta.env.VITE_API_URL);
+
 
 function randomColor() {
   const colors = ["#4e9af1", "#28a745", "#ff6f61", "#9c27b0", "#ff9800"];
