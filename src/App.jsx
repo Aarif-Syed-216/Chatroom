@@ -28,7 +28,6 @@ export default function App() {
     const newUser = { name: nameInput.trim(), color: randomColor() };
     setUser(newUser);
 
-    // Emit join event to server
     socket.emit("join", newUser.name);
   };
 
@@ -49,7 +48,7 @@ export default function App() {
           placeholder="Your name"
           autoFocus
           onKeyDown={(e) => {
-            if (e.key === "Enter") handleLogin(); // Enter to join
+            if (e.key === "Enter") handleLogin();
           }}
         />
         <button onClick={handleLogin}>Join Chat</button>
